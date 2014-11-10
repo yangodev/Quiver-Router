@@ -1,0 +1,22 @@
+{
+  "name": "Quiver.Router",
+  "version": "0.0.0",
+  "description": "Simple HTTP(S) Router",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {
+    "yangodev.utils": "C:\\Users\\Yannik\\Documents\\Brackets\\Workspace\\node\\utils",
+    "ArrowJS": "C:\\\\Users\\\\Yannik\\\\Documents\\\\Brackets\\\\JS Frameworks\\\\ArrowJS",
+    "node-mime": "^1.0.0"
+  },
+  "scripts": {
+    "test": "node --debug ./tests/test.js"
+  },
+  "author": "y4ng0 @ yangodev",
+  "license": "MIT",
+  "devDependencies": {
+    "mime": "^1.2.11"
+  }
+}
