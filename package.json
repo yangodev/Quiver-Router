@@ -7,16 +7,13 @@
     "test": "tests"
   },
   "dependencies": {
-    "yangodev.utils": "C:\\Users\\Yannik\\Documents\\Brackets\\Workspace\\node\\utils",
-    "ArrowJS": "C:\\\\Users\\\\Yannik\\\\Documents\\\\Brackets\\\\JS Frameworks\\\\ArrowJS",
-    "node-mime": "^1.0.0"
+    "ArrowJS": "git+https://github.com/yangodev/ArrowJS.git",
+    "mime": "^1.2.11"
   },
   "scripts": {
-    "test": "node --debug ./tests/test.js"
+    "test": "node ./tests/testServer.js"
   },
   "author": "y4ng0 @ yangodev",
   "license": "MIT",
-  "devDependencies": {
-    "mime": "^1.2.11"
-  }
+  "devDependencies": {}
 }
