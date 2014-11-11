@@ -1,8 +1,12 @@
 {
-  "name": "Quiver.Router",
-  "version": "0.0.0",
+  "name": "Quiver-Router",
+  "version": "0.1.0",
   "description": "Simple HTTP(S) Router",
   "main": "index.js",
+  "repository" : {
+    "type" : "git",
+    "url" : "https://github.com/yangodev/Quiver-Router.git"
+  },
   "directories": {
     "test": "tests"
   },
