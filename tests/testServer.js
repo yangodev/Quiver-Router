@@ -40,25 +40,26 @@ app
 	},
 	middleware: [
 
-    function one(req, res, next) {
+		function one(req, res, next) {
 			res.send('first layer \n')
 			return next()
-    },
-    function two(req, res, next) {
+		},
+		function two(req, res, next) {
 			res.send('second layer \n')
 			return next()
-    },
-    function three(req, res, next) {
+		},
+		function three(req, res, next) {
 			res.send('third layer \n')
 			return next()
-    }
-  ],
+		}
+	],
 	options: {}
 })
 // ** Params ** //
 // 2.1 to show simple params ( url : /api/param/simple/paramvalue )
 .route({
 	url: '/api/param/simple/@param',
+	id: 'param.simple',
 	methods: {
 		default: function (req, res, next) {
 			res.send(req.route.params.param)
@@ -101,18 +102,48 @@ app
 		}
 	},
 	middleware: [
-    '/api/multistack', '$inh',
-    function (x, y, next) {
+		'/api/multistack', '$inh',
+		function (x, y, next) {
 			y.send('jkghhg')
 			return next()
-    }
-  ]
+		}
+	]
+})
+// 4.0 API
+// 4.1 Route reversing
+.route({
+	url: '/api/reverse/@id',
+	methods: {
+		default: function (req, res, next) {
+			var route = app.table.getID(req.route.params.id)
+			if (!route) { res.end('No such route'); return next() }
+
+			var url = route[0].reverse(req.route.query)
+
+			res.end(JSON.stringify(url))
+			return next()
+		}
+	},
+	middleware: [
+		'/api/multistack', '$inh',
+		function (x, y, next) {
+			y.send('jkghhg')
+			return next()
+		}
+	]
 })
 // ** Static Routes ** //
 // Serves from /tests/public
 .route({
 	url: '/',
 	type: 'static'
+})
+.route({
+	url: '/static/',
+	type: 'static',
+	options: {
+		path : require('path').join( __dirname , 'www')
+	}
 })
 
 require('http').createServer(function (req, res) {
@@ -121,4 +152,4 @@ require('http').createServer(function (req, res) {
 	})
 }).listen(3000, '127.0.0.1')
 
-console.log('Test server running on http://127.0.0.1:3000' + '\nopen http://127.0.0.1:3000/example.html')
+console.log('Test server running on http://127.0.0.1:3000' + '\nopen http://127.0.0.1:3000/examples.html')
