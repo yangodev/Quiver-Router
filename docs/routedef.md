@@ -99,9 +99,10 @@ By default routes are `type : dynamic` so you just need to set `static` if you i
 
 ### Options
 This object contains all optional configuration.
-These are some options used to configure yoour route:
-+ `path` >> On static routes defines where the root is.
-+ `template` >> contains configuration for templatings
+These are some options used to configure your route:
++ `path` >> defines static file's root path
++ `template` >> [object] containing configuration for templating
++ [see more](./API.md)
 
 
 

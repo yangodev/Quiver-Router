@@ -56,7 +56,7 @@ Router.route({
 	id  : 'example.id',
 	methods : {
 		GET : function(request, response, next){
-			response.serve('Served ' + request.url.pathname);
+			response.serve('Served ' + request.uri.pathname);
 			return next();
 		}
 	},
@@ -71,6 +71,7 @@ Router.route({
 Detailed Information [here](./docs/routedef.md)
 * valid [URLs](./docs/routedef.md#URL)
 * [Parameters](./docs/routedef.md#parameters)
+* [ID](./docs/routedef.md#ID)
 * [methods](./docs/routedef.md#methods)
 * [middleware](./docs/routedef.md#middleware)
 * [type](./docs/routedef.md#type)
