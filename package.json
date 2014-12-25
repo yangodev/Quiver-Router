@@ -1,14 +1,11 @@
 {
-	"name": "Quiver-Router",
-	"version": "0.1.0",
+	"name": "WegweiserJS",
+	"version": "0.1.1",
 	"description": "Simple HTTP(S) Router",
 	"main": "index.js",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/yangodev/Quiver-Router.git"
-	},
-	"directories": {
-		"preview": "npm install mustache && node ./tests/testServer.js"
 	},
 	"dependencies": {
 		"ArrowJS": "git+https://github.com/yangodev/ArrowJS.git",
@@ -16,7 +13,13 @@
 		"cookie": "^0.1.2"
 	},
 	"scripts": {
-		"test": "node ./tests/testServer.js"
+		"preview": "node ./examples/server.example.js",
+		"preview.basics" : "node ./examples/server.example.js 1.basics.js",
+		"preview.param" : "node ./examples/server.example.js 2.params.js",
+		"preview.middleware" : "node ./examples/server.example.js 3.middleware.js",
+		"preview.api" : "node ./examples/server.example.js 4.api.js",
+		"preview.cookies" : "node ./examples/server.example.js 5.cookies.js",
+
 	},
 	"author": "y4ng0 @ yangodev",
 	"license": "MIT"
