@@ -35,7 +35,7 @@ module.exports = exports = function(app){
 		id: '$inh',
 		methods: {
 			default: function (req, res, next) {
-				res.serve(res.data)
+				res.serve('Affe')
 				return next()
 			}
 		},
